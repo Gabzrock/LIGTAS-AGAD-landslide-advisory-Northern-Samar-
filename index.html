@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>LIGTAS-AGAD landslide advisory(Northern Samar)</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northern Samar Landslide Warning Advisory</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="advisory-container">
+    <header>
+      <h1>Northern Samar <span class="highlight">Landslide Warning Advisory</span></h1>
+      <h2>7-Day Rainfall Accumulation (mm)</h2>
+      <p id="rainfall-date"><br>Loading...</p>
+      <div id="threshold">Rainfall-Landslide Threshold: <span id="threshold-value">27 mm**</span></div>
+    </header>
+
+    <div id="main-content">
+      <div id="advisory-table-wrapper">
+        <div id="advisory-table">
+          <table>
+            <thead>
+              <tr>
+                <th>AWS</th>
+                <th>Covered Municipality</th>
+                <th>Antecedent+ Cumulative</th>
+                <th>Warning</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+          </table>
+        </div>
+        <div id="table-threshold-label">
+          **Rainfall Landslide Threshold for Bicol Region applied in Northern Samar 
+        </div>
+      </div>
+
+      <div id="map-section">
+        <div id="advisory-map"></div>
+      </div>
+    </div>
+
+    <footer>
+      <img src="https://raw.githubusercontent.com/Gabzrock/GE_experiments/refs/heads/main/advisory_footer.png" alt="Landslide Advisory Project Information and Contact Links" id="static-footer-image">
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/papaparse@5.3.0/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

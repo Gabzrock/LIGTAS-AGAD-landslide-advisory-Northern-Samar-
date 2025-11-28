@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+/* Basic setup */
+/* Basic setup */
+body {
+    margin: 0; padding: 0; 
+    font-family: 'Open Sans', sans-serif;
+    
+    /* === ADD THESE BACKGROUND IMAGE PROPERTIES === */
+/* --- Background Image and Fix --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+
+    /* Fixed background properties (as previously set) */
+    background-image: url('dark_textured_background.jpg'); 
+    background-color: #0c1a26; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: cover; 
+    
+    display: flex;
+    justify-content: center;
+    /* Ensure body height is sufficient */
+    min-height: 100vh;
+    padding: 20px 0; 
+    flex-direction: column;
+}
+
+#advisory-container {
+    /* Retain original max-width for calculations, but the scaling will shrink it */
+    max-width: 1200px; 
+    
+    /* Center the scaled container */
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* === CRUCIAL CHANGE: Apply global 60% scaling === */
+    transform: scale(0.6);
+    /* Set the transformation origin to the top-center to keep positioning consistent */
+    transform-origin: top center;
+    
+    /* Optional: If you want to visually see the boundary before scaling, 
+       you must adjust the width and height properties. 
+       However, scaling handles width implicitly. We'll set a width
+       to define the area the 60% scaling is applied to. */
+    width: 1200px; /* Use the max-width as the base width for scaling */
+    
+    /* Background and visual styles (as previously set) */
+    background-image: url('https://raw.githubusercontent.com/Gabzrock/GE_experiments/refs/heads/main/advisorybg.png');
+    background-color: #0c1a26;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7); 
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+header { text-align: center; margin-bottom: 20px; }
+header h1 { font-size: 2.8em; font-weight: 700; color: white; margin-bottom: 5px; }
+.highlight { color: #fdd835; }
+#rainfall-date { font-size: 1.5em; }
+#threshold { 
+    background-color: #c93d3d; padding: 8px 15px; font-weight: 700; 
+    display: inline-block; border-radius: 4px; font-size: 1.1em; 
+}
+
+/* Main Content Layout (Map Left, Table Right) */
+#main-content {
+    display: flex;
+    flex-direction: row-reverse; /* Map on Left, Table on Right */
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+#advisory-table-wrapper {
+    /* === CHANGE: Table Width (approx 60% - flex: 3) === */
+    flex: 3; /* New Ratio: 3 parts for table */
+    min-width: 500px; 
+    background-color: #1a2f44;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#map-section {
+    /* === CHANGE: Map Width (approx 40% - flex: 2) === */
+    flex: 2; /* New Ratio: 2 parts for map (3 + 2 = 5 total parts; 2/5 = 40%) */
+    min-width: 250px;
+}
+
+#advisory-map {
+    height: 650px; /* Retain increased height */
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #333;
+  
+/* === ADD SQUARE SHADOW === */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9), 
+                0 0 40px rgba(0, 0, 0, 0.7); 
+    /* The first shadow is a tight, dark shadow for depth. */
+    /* The second shadow is a wider, softer shadow for glow/lift. */
+    /* Adjust the color and spread (last two values) to control the shadow's look. */
+}
+
+/* Table Styling (includes word-wrap and fixed layout) */
+#advisory-table table {
+width: 100%;
+    border-collapse: collapse; /* Critical: Collapses borders into a single line */
+    table-layout: fixed; 
+    
+    /* === FIX 1: Outer Border for the Table === */
+    border: 3px solid #55677d;
+}
+
+#advisory-table th, #advisory-table td {
+    padding: 12px 10px; 
+    /* GENERAL cells are left-aligned */
+    text-align: left; 
+    border-bottom: 1px solid #334a66; /* Keep subtle divider line */
+    
+    font-size: 1.3em;
+    line-height: 1.3; 
+    height: 60px;     
+    vertical-align: middle; 
+    overflow: hidden; 
+    
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+  
+  border: 3px solid #445566;
+}
+
+/* Column Widths and Specific Alignment */
+/* 1st Column: AWS */
+#advisory-table thead tr th:nth-child(1), #advisory-table tbody tr td:nth-child(1) { width: 25%; }
+/* 2nd Column: Covered Municipality */
+#advisory-table thead tr th:nth-child(2), #advisory-table tbody tr td:nth-child(2) { width: 45%; } 
+/* 3rd Column: Cumulative */
+#advisory-table thead tr th:nth-child(3), #advisory-table tbody tr td:nth-child(3) { width: 25%; }
+
+/* 4th Column: Warning */
+#advisory-table thead tr th:nth-child(4), 
+#advisory-table tbody tr td:nth-child(4) { 
+    width: 15%; 
+    text-align: center; 
+}
+
+/* ... (rest of the styles remain unchanged) ... */
+/* === TABLE HEADER (Unchanged - Keeps previous dark color) === */
+#advisory-table thead th {
+    background-color: #213c57; 
+    font-weight: 700;
+    color: white; /* Header text remains white */
+    border-top: 1px solid #334a66;
+    font-size: 1.1em; 
+}
+  
+/* Warning Colors and Label */
+.warning-1 { background-color: #ffc107; color: black; font-weight: bold; }
+.warning-2 { background-color: #fd7e14; color: white; font-weight: bold; }
+.warning-3 { background-color: #dc3545; color: white; font-weight: bold; }
+.warning-na { background-color: #6c757d; color: white; }
+
+#table-threshold-label {
+    background-color: #334a66; 
+    color: white; padding: 8px 10px; margin-top: 15px; 
+    border-radius: 4px; font-size: 0.95em; font-weight: bold; text-align: center;
+}
+
+/* --- Footer Styling --- */
+
+/* Remove or comment out all previous complex footer styles like #project-info, .footer-logo, #contact-links, .contact-item, etc. */
+
+footer {
+    /* Reset basic footer container properties */
+    border-top: 1px solid #334a66; 
+    padding-top: 15px;
+    margin-top: 20px;
+    
+    /* Ensure the footer image takes up the space */
+    display: block; 
+    text-align: center; /* Center the image if it's smaller than the footer */
+}
+
+#static-footer-image {
+    width: 100%; /* Make the image span the full width of the advisory container */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+/* You must also remove the old media queries related to the complex footer layout */
+
+@media (max-width: 992px) {
+    /* ... other existing media query rules ... */
+    
+    /* Remove or comment out all lines related to footer, #project-info, #contact-links */
+    /*
+    footer { flex-direction: column; align-items: center; text-align: center; }
+    #project-info { flex-direction: column; align-items: center; text-align: center; margin-bottom: 20px; padding-right: 0; }
+    #contact-links { align-items: flex-start; margin-left: auto; margin-right: auto; }
+    */
+}
+  /* --- Map Label Styling --- */
+.aws-label {
+    /* Make background transparent */
+    background: transparent !important; 
+    
+    /* Remove the default Leaflet arrow tip */
+    border: none !important; 
+    
+    /* Center the text */
+    text-align: center;
+    
+    /* Style the text to be visible on the map */
+    color: white;
+    font-weight: italic;
+    font-size: 12px;
+    padding: 0;
+    margin-left: 0;
+}
+
+/* Optional: Target the actual label content */
+.aws-label .leaflet-tooltip-pane {
+    transform: none !important;
+}
