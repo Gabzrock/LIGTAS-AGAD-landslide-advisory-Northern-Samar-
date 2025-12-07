@@ -100,9 +100,9 @@ function initMap(data) {
         let fillColor = '#555566'; // Using a slightly different dark color for the fill
         const warningValue = item.Warning ? item.Warning.trim() : 'N/A';
         switch(warningValue) {
-            case '1': circleColor = '#ffc107'; fillColor = '#ffc107'; break; 
-            case '2': circleColor = '#fd7e14'; fillColor = '#fd7e14'; break; 
-            case '3': circleColor = '#dc3545'; fillColor = '#dc3545'; break; 
+            case '1': circleColor = 'yellow'; fillColor = 'yellow'; break; 
+            case '2': circleColor = 'orange'; fillColor = 'orange'; break; 
+            case '3': circleColor = 'red'; fillColor = 'red'; break; 
         }
 
         // Add 20km Buffer (Circle)
