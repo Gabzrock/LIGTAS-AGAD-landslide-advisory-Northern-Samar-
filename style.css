@@ -162,9 +162,9 @@ width: 100%;
 }
   
 /* Warning Colors and Label */
-.warning-1 { background-color: #ffc107; color: black; font-weight: bold; }
-.warning-2 { background-color: #fd7e14; color: white; font-weight: bold; }
-.warning-3 { background-color: #dc3545; color: white; font-weight: bold; }
+.warning-1 { background-color: yellow; color: black; font-weight: bold; }
+.warning-2 { background-color: orange; color: white; font-weight: bold; }
+.warning-3 { background-color: red; color: white; font-weight: bold; }
 .warning-na { background-color: #6c757d; color: white; }
 
 #table-threshold-label {
